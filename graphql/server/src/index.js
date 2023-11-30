@@ -41,6 +41,8 @@ const graphQLSetting = async () => {
       getTodos: [Todo]
       getAllUsers: [User]
       getUser(id: ID!): User
+      
+      hello: String
     }
   `,
     resolvers: {
@@ -68,6 +70,8 @@ const graphQLSetting = async () => {
             await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
           ).data;
         },
+
+        hello: () => "Hello World",
       },
     },
   });
