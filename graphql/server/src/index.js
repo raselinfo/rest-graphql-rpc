@@ -6,7 +6,6 @@ const cors=require("cors")
 // GraphQL
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
-
 const app = express();
 
 app.use(
@@ -16,11 +15,11 @@ app.use(
 );
 
 const server = http.createServer(app);
-
+ 
 // GraphQL Setting
 const graphQLSetting = async () => {
   const graphQLServer = new ApolloServer({
-    typeDefs: `
+    typeDefs: `#graphql
     type User {
       id: ID!
       name: String!
